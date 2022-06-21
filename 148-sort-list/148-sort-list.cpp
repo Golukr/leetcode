@@ -33,14 +33,14 @@ public:
     }
     ListNode* merge(ListNode *left, ListNode *right) {
 		ListNode *cur = nullptr;
-		if(!left) return right;
+		if(!left) return right; //!left means left==NULL
 		if(!right) return left;
 		if(left->val < right->val) {
 			cur = left;
-			cur->next = merge(left->next, right);
+			cur->next = merge(left->next, right); //recursive call
 		} else {
 			cur = right;
-			cur->next = merge(left, right->next);
+			cur->next = merge(left, right->next); //again using recursive call
 		}
 		return cur;
 	}
