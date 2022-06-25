@@ -24,8 +24,8 @@ public:
             {
                 ListNode* next_next = curr->next->next;
                 ListNode* nodeToDelete = curr->next;
-                delete(nodeToDelete);
-                curr->next = next_next;
+                delete(nodeToDelete);  //deleting the value of curr->next node
+                curr->next = next_next;  //here pointing curr->next to curr->next->next
 }
             else  //not equal
             {
