@@ -10,7 +10,7 @@ public:
         {
             int value = nums[i];
                 int left=i+1;
-                int right=n-1;
+                int right=n-1;   //two pointer approach
                 while(left<right)
                 {
                     sum = nums[i] + nums[left] + nums[right];
