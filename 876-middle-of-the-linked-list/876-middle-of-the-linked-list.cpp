@@ -17,8 +17,8 @@ public:
         fast = head;
         while(fast != NULL && fast->next != NULL)
         {
-            slow = slow->next;
-            fast = fast->next->next;
+            slow = slow->next; //moving slow pointer to only one step
+            fast = fast->next->next;//while fast pointer to two step
 }
         return slow;
     }
