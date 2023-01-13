@@ -99,7 +99,6 @@ public:
     vector<int> inOrder(Node* root)
     {
         vector<int> inorder;
-        if(root==NULL) return inorder;
         stack<Node*> st;
        Node* temp=root;
        while(true){
