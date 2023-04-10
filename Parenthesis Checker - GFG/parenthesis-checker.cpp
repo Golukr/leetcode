@@ -1,9 +1,9 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include<bits/stdc++.h>
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 
 class Solution
 {
@@ -11,31 +11,34 @@ class Solution
     //Function to check if brackets are balanced or not.
     bool ispar(string x)
     {
-        // Your code here
-         stack<char> s;
-        for(int i=0; i<x.length(); i++)
-        {
-            if(s.empty())
+       stack<char> s;
+       for(int i=0; i<x.size(); i++){
+           char ch=x[i];
+           if(ch=='(' || ch=='{' || ch=='[')
             {
-                s.push(x[i]); // push the character of string in the stack s
-            }
-            else if((s.top()=='(' && x[i]==')') || (s.top()=='{' && x[i]=='}') || (s.top()=='[' && x[i]==']'))
-            {
-                s.pop();
+                s.push(ch);
             }else{
-                s.push(x[i]);
-            }
-        }
-        if(s.empty()){
-        return true;
-        }
-        return false;
-    
+           if(!s.empty()){
+               if(s.top()=='(' && ch==')' || s.top()=='{' && ch=='}' || s.top()=='[' && ch==']'){
+                   s.pop();
+               }else{
+                   return false;
+               }
+           }
+           else{
+               return false;
+           }
+       }
+       }
+       if(s.empty())
+           return true;
+       else
+       return false;
     }
 
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main()
 {
@@ -51,4 +54,5 @@ int main()
        else
         cout<<"not balanced"<<endl;
    }
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
