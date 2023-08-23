@@ -11,22 +11,22 @@ public:
 	// largest elements
 	int print2largest(int arr[], int n) {
 	    // code here
-	    set<int> s;
+	   // set<int> s;
 	    
 	    int mx1=INT_MIN;
 	    for(int i=0; i<n; i++){
-	        s.insert(arr[i]);
+	       // s.insert(arr[i]);
 	        mx1=max(mx1,arr[i]);
 	    }
-	    int mx2=INT_MIN;
+	    int mx2=-1;
 	    for(int i=0; i<n; i++){
 	        if(arr[i]!=mx1){
 	            mx2=max(mx2,arr[i]);
 	        }
 	    }
-	    if(s.size()==1){
-	        return -1;
-	    }
+	   // if(s.size()==1){
+	   //     return -1;
+	   // }
 	    return mx2;
 	}
 };
