@@ -15,8 +15,8 @@ class Solution
     string reverseWord(string str)
     {
         // Your code goes here
-        reverse(str.begin(),str.end());
-        return str;
+         reverse(str.begin(),str.end());
+         return str;
     }
 };
 
