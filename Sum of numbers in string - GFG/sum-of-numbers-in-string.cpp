@@ -12,21 +12,20 @@ class Solution
 {
     public:
     //Function to calculate sum of all numbers present in a string.
-    int findSum(string str)
+    int findSum(string s)
     {
-    	
-    	// Your code here
     	int sum=0;
-    	for(int i=0; i<str.size(); i++){
-    	   int num=0;
-    	   while(str[i]-'0'>=0 && str[i]-'0'<=9){
-    	       num=num*10 + str[i]-'0';
-    	       i++;
-    	   }
-    	   sum+=num;
+    	int num=0;
+    	for(int i=0; i<s.size(); i++){
+    	    if(s[i]>='0' && s[i]<='9'){
+    	        num=num*10+(s[i]-'0');
+    	    }else{
+    	       
+    	        sum+=num;
+    	        num=0;
+    	    }
     	}
-    	
-    	return sum;
+    	return sum+num;
     }
 };
 
