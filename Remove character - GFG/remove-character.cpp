@@ -10,16 +10,17 @@ class Solution {
   public:
     string removeChars(string s1, string s2) {
         // code here
-        string s="";
-        unordered_map<char, int> mp;
-        for(int i=0; i<s2.length(); i++){
+        map<char, int>  mp;
+        for(int i=0; i<s2.size(); i++){
             mp[s2[i]]=1;
         }
-        for(int i=0; i<s1.length(); i++){
-            if(mp[s1[i]]!=1)
-            s.push_back(s1[i]);
+        string ans="";
+        for(int i=0; i<s1.size(); i++){
+            if(mp[s1[i]]!=1){
+                ans.push_back(s1[i]);
+            }
         }
-        return s;
+        return ans;
     }
 };
 
