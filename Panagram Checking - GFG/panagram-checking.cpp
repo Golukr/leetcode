@@ -14,17 +14,16 @@ class Solution
     //Function to check if a string is Pangram or not.
     bool checkPangram (string &str) {
         // your code here
-        unordered_map<char, int> mp;
-        for(char ch: str){
-            char c=toupper(ch);
-            mp[c]++;
-        }
-        for(int i='A'; i<='Z'; i++){
-            if(mp[i]==0){
-                return false;
+        unordered_set<char> st;
+        for(int i=0; i<str.size(); i++){
+            if(isupper(str[i])){
+                str[i]=tolower(str[i]);
+            }
+            if(isalpha(str[i])){
+                st.insert(str[i]);
             }
         }
-        return true;
+        return st.size()==26;
     }
 
 };
